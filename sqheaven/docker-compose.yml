@@ -1,0 +1,12 @@
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Explicitly reference the Dockerfile path
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: sqheaven_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ""
+      POSTGRES_HOST_AUTH_METHOD: "trust"
